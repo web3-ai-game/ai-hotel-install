@@ -1,7 +1,7 @@
 export const errorHandler = (
-  req: Request,
+ain
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ) => {
 
     success: false,

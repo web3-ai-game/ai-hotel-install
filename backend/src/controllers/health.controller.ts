@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 
 export const healthController = {
-  check: async (req: Request, res: Response) => {
+  check: async (_req: Request, res: Response) => {
     try {
       res.json({
         success: true,
