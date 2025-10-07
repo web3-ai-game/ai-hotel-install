@@ -1,0 +1,173 @@
+/* General page styling */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling */
+.header {
+  padding: 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hotel-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Card styling */
+.status-card,
+.features-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.status-card h2,
+.features-card h2 {
+  margin-top: 0;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+}
+
+.status-error {
+  color: #ffcccc;
+  font-weight: bold;
+}
+
+.status-success {
+  color: #ccffcc;
+  font-weight: bold;
+}
+
+.status-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.features-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features-card li {
+  padding: 0.5rem 0;
+}
+
+/* Actions card styling */
+.actions-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.actions-card h2 {
+  margin-top: 0;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary {
+  background-color: #2575fc;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1a5cbf;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Footer styling */
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .status-card,
+  .features-card,
+  .actions-card {
+    width: 30%;
+  }
+}

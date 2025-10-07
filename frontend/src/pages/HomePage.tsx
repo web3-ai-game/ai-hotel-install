@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { apiClient } from '../services/api'
+import './HomePage.css'
+import hotelIcon from '../assets/hotel-icon.svg'
+import successIcon from '../assets/success-icon.svg'
+import failureIcon from '../assets/failure-icon.svg'
 
 const HomePage: React.FC = () => {
   const [message, setMessage] = useState<string>('Loading...')
@@ -21,29 +25,52 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="home-page">
-      <h1>AI Hotel Install</h1>
-      <p>Welcome to the AI Hotel Installation Full Stack Application</p>
-      
-      <div className="status-card">
-        <h2>Backend Status</h2>
-        {error ? (
-          <p style={{ color: 'red' }}>{error}</p>
-        ) : (
-          <p style={{ color: 'green' }}>{message}</p>
-        )}
-      </div>
+      <header className="header">
+        <img src={hotelIcon} alt="Hotel Icon" className="hotel-icon" />
+        <h1>AI Hotel</h1>
+        <p>Welcome to the AI Hotel Installation Full Stack Application</p>
+      </header>
 
-      <div className="features">
-        <h2>Features</h2>
-        <ul>
-          <li>React 18 with TypeScript</li>
-          <li>Vite for fast development</li>
-          <li>React Router for navigation</li>
-          <li>Node.js + Express backend</li>
-          <li>MongoDB/PostgreSQL support</li>
-          <li>Docker ready</li>
-        </ul>
-      </div>
+      <main className="main-content">
+        <section className="status-card">
+          <h2>Backend Status</h2>
+          {error ? (
+            <div className="status-display">
+              <img src={failureIcon} alt="Failure Icon" className="status-icon" />
+              <p className="status-error">{error}</p>
+            </div>
+          ) : (
+            <div className="status-display">
+              <img src={successIcon} alt="Success Icon" className="status-icon" />
+              <p className="status-success">{message}</p>
+            </div>
+          )}
+        </section>
+
+        <section className="features-card">
+          <h2>Features</h2>
+          <ul>
+            <li>React 18 with TypeScript</li>
+            <li>Vite for fast development</li>
+            <li>React Router for navigation</li>
+            <li>Node.js + Express backend</li>
+            <li>MongoDB/PostgreSQL support</li>
+            <li>Docker ready</li>
+          </ul>
+        </section>
+
+        <section className="actions-card">
+          <h2>Actions</h2>
+          <div className="buttons-container">
+            <button className="btn btn-primary">Book Now</button>
+            <button className="btn btn-secondary">Learn More</button>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <p>&copy; 2024 AI Hotel. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
