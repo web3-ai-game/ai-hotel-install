@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: hotel-ai-postgres
+    environment:
+      POSTGRES_USER: hoteluser
+      POSTGRES_PASSWORD: hotelpass
+      POSTGRES_DB: hotel_ai_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - hotel-network
+
+  # Redis for caching and session management
+  redis:
+    image: redis:7-alpine
+    container_name: hotel-ai-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - hotel-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hotel-ai-backend
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://hoteluser:hotelpass@postgres:5432/hotel_ai_db
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: your-secret-key-change-in-production
+      AI_API_KEY: your-ai-api-key
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - hotel-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: hotel-ai-frontend
+    environment:
+      REACT_APP_API_URL: http://localhost:3000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - hotel-network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  postgres_data:
+
+networks:
+  hotel-network:
+    driver: bridge
