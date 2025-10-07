@@ -1,0 +1,75 @@
+任务: [复杂任务名称]
+Task: [Complex Task Name]
+
+描述:
+[详细描述这个任务的背景和目标]
+
+Description:
+[Detailed description of the task background and objectives]
+
+子任务 (Subtasks):
+
+1. [子任务1标题]
+   - [具体要求1]
+   - [具体要求2]
+
+2. [子任务2标题]
+   - [具体要求1]
+   - [具体要求2]
+
+3. [子任务3标题]
+   - [具体要求1]
+   - [具体要求2]
+
+Subtasks:
+
+1. [Subtask 1 Title]
+   - [Specific requirement 1]
+   - [Specific requirement 2]
+
+2. [Subtask 2 Title]
+   - [Specific requirement 1]
+   - [Specific requirement 2]
+
+3. [Subtask 3 Title]
+   - [Specific requirement 1]
+   - [Specific requirement 2]
+
+技术要求 (Technical Requirements):
+- [技术要求1]
+- [技术要求2]
+- [技术要求3]
+
+Technical Requirements:
+- [Technical requirement 1]
+- [Technical requirement 2]
+- [Technical requirement 3]
+
+预期结果 (Expected Outcomes):
+- ✅ [可验证的结果1]
+- ✅ [可验证的结果2]
+- ✅ [可验证的结果3]
+- ✅ [可验证的结果4]
+
+Expected Outcomes:
+- ✅ [Verifiable outcome 1]
+- ✅ [Verifiable outcome 2]
+- ✅ [Verifiable outcome 3]
+- ✅ [Verifiable outcome 4]
+
+验收标准 (Acceptance Criteria):
+- [标准1]
+- [标准2]
+- [标准3]
+
+Acceptance Criteria:
+- [Criterion 1]
+- [Criterion 2]
+- [Criterion 3]
+
+依赖 (Dependencies):
+[列出所有依赖的任务文件]
+
+优先级 (Priority): [高/中/低] ([High/Medium/Low])
+
+预计时间 (Estimated Time): [时间估算]
