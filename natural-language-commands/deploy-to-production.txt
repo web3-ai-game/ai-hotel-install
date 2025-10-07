@@ -1,0 +1,74 @@
+任务: 部署到生产环境
+Task: Deploy to Production
+
+描述:
+将AI酒店系统安全、可靠地部署到生产环境，确保高可用性和良好性能。
+
+Description:
+Deploy the AI hotel system to production environment safely and reliably, ensuring high availability and good performance.
+
+部署步骤 (Deployment Steps):
+
+1. 环境准备 (Environment Preparation)
+   - 配置生产服务器（云服务器或本地服务器）
+   - Configure production server (cloud or on-premise)
+   - 设置域名和SSL证书（HTTPS）
+   - Set up domain and SSL certificate (HTTPS)
+   - 配置防火墙和安全规则
+   - Configure firewall and security rules
+
+2. 数据库设置 (Database Setup)
+   - 生产数据库配置
+   - Production database configuration
+   - 数据备份策略
+   - Data backup strategy
+   - 数据迁移（如果需要）
+   - Data migration (if needed)
+
+3. 应用部署 (Application Deployment)
+   - 使用容器化（Docker）或传统部署
+   - Use containerization (Docker) or traditional deployment
+   - 配置负载均衡（如果需要）
+   - Configure load balancing (if needed)
+   - 设置自动重启和监控
+   - Set up auto-restart and monitoring
+
+4. 性能优化 (Performance Optimization)
+   - 启用缓存（Redis等）
+   - Enable caching (Redis, etc.)
+   - CDN配置（静态资源）
+   - CDN configuration (static resources)
+   - 数据库查询优化
+   - Database query optimization
+
+预期结果 (Expected Outcomes):
+- ✅ 系统在生产环境稳定运行
+- ✅ 99.9% 可用性
+- ✅ 页面加载时间 < 3秒
+- ✅ 支持至少100并发用户
+- ✅ 自动错误报警和监控
+- ✅ 每日自动备份
+
+Expected Outcomes:
+- ✅ System runs stably in production
+- ✅ 99.9% availability
+- ✅ Page load time < 3 seconds
+- ✅ Support at least 100 concurrent users
+- ✅ Automatic error alerts and monitoring
+- ✅ Daily automated backups
+
+安全要求 (Security Requirements):
+- HTTPS加密传输
+- HTTPS encrypted transmission
+- 定期安全更新
+- Regular security updates
+- 敏感数据加密存储
+- Sensitive data encrypted storage
+- 访问日志记录
+- Access logging
+
+依赖 (Dependencies):
+- setup-hotel-system.txt
+- configure-ai-assistant.txt
+
+优先级 (Priority): 中 (Medium)
