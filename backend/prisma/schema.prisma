@@ -1,0 +1,190 @@
+// Prisma schema for Hotel Management System
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User management
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  firstName String
+  lastName  String
+  role      Role     @default(GUEST)
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  bookings  Booking[]
+  reviews   Review[]
+  
+  @@map("users")
+}
+
+enum Role {
+  GUEST
+  STAFF
+  MANAGER
+  ADMIN
+}
+
+// Room management
+model Room {
+  id          String      @id @default(uuid())
+  roomNumber  String      @unique
+  type        RoomType
+  floor       Int
+  capacity    Int
+  price       Float
+  description String?
+  status      RoomStatus  @default(AVAILABLE)
+  amenities   String[]
+  images      String[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  
+  bookings    Booking[]
+  
+  @@map("rooms")
+}
+
+enum RoomType {
+  STANDARD
+  DELUXE
+  SUITE
+  PRESIDENTIAL
+}
+
+enum RoomStatus {
+  AVAILABLE
+  OCCUPIED
+  MAINTENANCE
+  RESERVED
+}
+
+// Booking management
+model Booking {
+  id          String        @id @default(uuid())
+  userId      String
+  roomId      String
+  checkIn     DateTime
+  checkOut    DateTime
+  guests      Int
+  totalPrice  Float
+  status      BookingStatus @default(PENDING)
+  specialRequests String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  
+  user        User          @relation(fields: [userId], references: [id])
+  room        Room          @relation(fields: [roomId], references: [id])
+  payment     Payment?
+  
+  @@map("bookings")
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CHECKED_IN
+  CHECKED_OUT
+  CANCELLED
+}
+
+// Payment management
+model Payment {
+  id          String        @id @default(uuid())
+  bookingId   String        @unique
+  amount      Float
+  method      PaymentMethod
+  status      PaymentStatus @default(PENDING)
+  transactionId String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  
+  booking     Booking       @relation(fields: [bookingId], references: [id])
+  
+  @@map("payments")
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  DEBIT_CARD
+  PAYPAL
+  CASH
+  BANK_TRANSFER
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+// Review system
+model Review {
+  id        String   @id @default(uuid())
+  userId    String
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  user      User     @relation(fields: [userId], references: [id])
+  
+  @@map("reviews")
+}
+
+// AI Chat History
+model ChatHistory {
+  id        String   @id @default(uuid())
+  userId    String?
+  message   String
+  response  String
+  context   Json?
+  createdAt DateTime @default(now())
+  
+  @@map("chat_history")
+}
+
+// Service requests
+model ServiceRequest {
+  id          String              @id @default(uuid())
+  roomNumber  String
+  type        ServiceRequestType
+  description String
+  status      ServiceStatus       @default(PENDING)
+  priority    Priority            @default(MEDIUM)
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+  
+  @@map("service_requests")
+}
+
+enum ServiceRequestType {
+  HOUSEKEEPING
+  ROOM_SERVICE
+  MAINTENANCE
+  CONCIERGE
+  OTHER
+}
+
+enum ServiceStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
