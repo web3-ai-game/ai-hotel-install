@@ -1,0 +1,43 @@
+任务: 设置AI酒店基础系统
+Task: Setup AI Hotel Base System
+
+描述:
+创建一个基础的AI酒店管理系统，包含以下核心功能：
+1. 房间管理系统 - 跟踪房间状态（可用、已预订、清洁中）
+2. 客人信息管理 - 存储和管理客人数据
+3. 预订系统 - 处理新预订、修改和取消
+4. AI助手接口 - 为AI交互提供API端点
+
+Description:
+Create a basic AI hotel management system with the following core features:
+1. Room management system - Track room status (available, booked, cleaning)
+2. Guest information management - Store and manage guest data
+3. Reservation system - Handle new bookings, modifications, and cancellations
+4. AI assistant interface - Provide API endpoints for AI interaction
+
+预期结果 (Expected Outcomes):
+- ✅ 系统可以管理至少50个房间
+- ✅ 支持基本的CRUD操作（创建、读取、更新、删除）
+- ✅ 提供RESTful API接口
+- ✅ 数据持久化存储
+- ✅ 基本的错误处理和日志记录
+
+Expected Outcomes:
+- ✅ System can manage at least 50 rooms
+- ✅ Support basic CRUD operations (Create, Read, Update, Delete)
+- ✅ Provide RESTful API interface
+- ✅ Persistent data storage
+- ✅ Basic error handling and logging
+
+技术要求 (Technical Requirements):
+- 使用现代的Web框架（如 Flask, FastAPI, Express.js）
+- Use modern web framework (e.g., Flask, FastAPI, Express.js)
+- 支持JSON数据格式
+- Support JSON data format
+- 易于扩展和维护
+- Easy to extend and maintain
+
+依赖 (Dependencies):
+无 (None)
+
+优先级 (Priority): 高 (High)

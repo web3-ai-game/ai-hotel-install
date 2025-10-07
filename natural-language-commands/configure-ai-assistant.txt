@@ -1,0 +1,62 @@
+任务: 配置智能AI助手
+Task: Configure Intelligent AI Assistant
+
+描述:
+为酒店系统添加一个智能AI助手，能够用自然语言与客人交互，处理常见查询和请求。
+
+Description:
+Add an intelligent AI assistant to the hotel system that can interact with guests in natural language and handle common queries and requests.
+
+功能需求 (Feature Requirements):
+
+1. 多语言支持 (Multi-language Support)
+   - 中文 (Chinese)
+   - 英文 (English)
+   - 自动语言检测 (Automatic language detection)
+
+2. 对话能力 (Conversation Capabilities)
+   - 房间查询（价格、可用性、设施）
+   - Room inquiries (price, availability, amenities)
+   - 预订管理（创建、查看、修改、取消）
+   - Reservation management (create, view, modify, cancel)
+   - 酒店服务信息（餐厅、健身房、Spa等）
+   - Hotel services info (restaurant, gym, spa, etc.)
+   - 本地旅游建议
+   - Local tourism recommendations
+
+3. 智能功能 (Intelligent Features)
+   - 理解用户意图
+   - Understand user intent
+   - 上下文记忆（记住对话历史）
+   - Context memory (remember conversation history)
+   - 个性化推荐
+   - Personalized recommendations
+   - 24/7 可用
+   - 24/7 availability
+
+预期结果 (Expected Outcomes):
+- ✅ AI助手可以准确理解90%以上的常见查询
+- ✅ 响应时间 < 2秒
+- ✅ 支持同时处理多个对话会话
+- ✅ 友好的用户体验
+- ✅ 错误时能够优雅降级（转接人工客服）
+
+Expected Outcomes:
+- ✅ AI assistant can accurately understand 90%+ of common queries
+- ✅ Response time < 2 seconds
+- ✅ Support concurrent conversation sessions
+- ✅ Friendly user experience
+- ✅ Graceful degradation on errors (transfer to human support)
+
+技术集成 (Technical Integration):
+- 使用主流AI/LLM服务（OpenAI, Claude, 本地模型等）
+- Use mainstream AI/LLM services (OpenAI, Claude, local models, etc.)
+- WebSocket或轮询支持实时对话
+- WebSocket or polling for real-time conversation
+- 对话历史存储
+- Conversation history storage
+
+依赖 (Dependencies):
+- setup-hotel-system.txt
+
+优先级 (Priority): 高 (High)

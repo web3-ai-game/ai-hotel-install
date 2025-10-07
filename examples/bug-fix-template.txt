@@ -1,0 +1,78 @@
+问题: [问题简短描述]
+Issue: [Brief Issue Description]
+
+问题详情 (Issue Details):
+
+发现时间 (Discovery Time): [日期/时间]
+影响范围 (Impact Scope): [哪些功能受影响]
+严重程度 (Severity): [严重/中等/轻微] ([Critical/Medium/Minor])
+
+问题描述 (Issue Description):
+[详细描述问题的表现、触发条件、错误信息等]
+
+[Detailed description of the issue manifestation, trigger conditions, error messages, etc.]
+
+重现步骤 (Steps to Reproduce):
+1. [步骤1]
+2. [步骤2]
+3. [步骤3]
+
+Steps to Reproduce:
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+预期行为 (Expected Behavior):
+[描述应该发生什么]
+
+[Describe what should happen]
+
+实际行为 (Actual Behavior):
+[描述实际发生了什么]
+
+[Describe what actually happens]
+
+根本原因分析 (Root Cause Analysis):
+[如果已知，描述问题的根本原因]
+
+[If known, describe the root cause of the issue]
+
+修复方案 (Fix Solution):
+[描述如何修复这个问题]
+
+[Describe how to fix this issue]
+
+修复步骤 (Fix Steps):
+- [ ] [步骤1]
+- [ ] [步骤2]
+- [ ] [步骤3]
+
+Fix Steps:
+- [ ] [Step 1]
+- [ ] [Step 2]
+- [ ] [Step 3]
+
+测试验证 (Test Verification):
+- [ ] [验证点1]
+- [ ] [验证点2]
+- [ ] [回归测试]
+
+Test Verification:
+- [ ] [Verification point 1]
+- [ ] [Verification point 2]
+- [ ] [Regression testing]
+
+预期结果 (Expected Outcomes):
+- ✅ 问题已修复，不再重现
+- ✅ 未引入新问题
+- ✅ 相关功能正常工作
+
+Expected Outcomes:
+- ✅ Issue is fixed and no longer reproduces
+- ✅ No new issues introduced
+- ✅ Related features work normally
+
+依赖 (Dependencies):
+[如果修复依赖其他任务]
+
+优先级 (Priority): [高/中/低] ([High/Medium/Low])

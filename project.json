@@ -1,0 +1,49 @@
+{
+  "project": {
+    "name": "ai-hotel-install",
+    "version": "1.0.0",
+    "description": "Natural language programming framework for AI hotel management system",
+    "description_zh": "AI酒店管理系统的自然语言编程框架"
+  },
+  "natural_language": {
+    "enabled": true,
+    "supported_languages": ["zh", "en"],
+    "default_language": "zh",
+    "commands_directory": "natural-language-commands",
+    "examples_directory": "examples"
+  },
+  "development": {
+    "task_format": "txt",
+    "encoding": "utf-8",
+    "templates": {
+      "simple": "examples/simple-task-template.txt",
+      "complex": "examples/complex-task-template.txt",
+      "feature": "examples/feature-development-template.txt",
+      "bugfix": "examples/bug-fix-template.txt"
+    }
+  },
+  "ai_assistant": {
+    "enabled": true,
+    "features": [
+      "natural_language_understanding",
+      "task_parsing",
+      "code_generation",
+      "multi_language_support"
+    ]
+  },
+  "hotel_features": {
+    "core_modules": [
+      "room_management",
+      "reservation_system",
+      "guest_management",
+      "ai_assistant",
+      "billing_system"
+    ],
+    "optional_modules": [
+      "restaurant_booking",
+      "spa_services",
+      "event_management",
+      "loyalty_program"
+    ]
+  }
+}
