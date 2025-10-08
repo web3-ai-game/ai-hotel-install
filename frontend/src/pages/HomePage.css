@@ -1,173 +1,151 @@
-/* General page styling */
+/* Home Page */
 .home-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--background-dark);
+    overflow-x: hidden;
 }
 
-/* Header styling */
-.header {
-  padding: 2rem;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.2);
+/* Smooth scrolling sections */
+.home-page section {
+    scroll-margin-top: 80px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: bold;
+/* Global animations for page load */
+.home-page * {
+    animation-fill-mode: both;
 }
 
-.hotel-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 1rem;
+/* Page transitions */
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.header p {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Main content styling */
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+.page-exit {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Card styling */
-.status-card,
-.features-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 2rem;
-  margin: 1rem;
-  width: 100%;
-  max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.page-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.status-card h2,
-.features-card h2 {
-  margin-top: 0;
-  border-bottom: 2px solid white;
-  padding-bottom: 0.5rem;
+/* Loading states */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
 }
 
-.status-error {
-  color: #ffcccc;
-  font-weight: bold;
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--border-color);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-.status-success {
-  color: #ccffcc;
-  font-weight: bold;
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.status-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--border-color);
+    z-index: 1000;
 }
 
-.status-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 0.5rem;
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--primary-gradient);
+    width: 0%;
+    transition: width 0.1s ease;
 }
 
-.features-card ul {
-  list-style: none;
-  padding: 0;
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-medium);
 }
 
-.features-card li {
-  padding: 0.5rem 0;
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Actions card styling */
-.actions-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 2rem;
-  margin: 1rem;
-  width: 100%;
-  max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  text-align: center;
+.back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
 }
 
-.actions-card h2 {
-  margin-top: 0;
-  border-bottom: 2px solid white;
-  padding-bottom: 0.5rem;
+/* Section spacing */
+.home-page section:not(:first-child) {
+    margin-top: -1px; /* Prevent gaps between sections */
 }
 
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
 }
 
-.btn {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
+/* Print styles */
+@media print {
+    .home-page {
+        background: white !important;
+        color: black !important;
+    }
 
-.btn-primary {
-  background-color: #2575fc;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #1a5cbf;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Footer styling */
-.footer {
-  padding: 1rem;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive design */
-@media (min-width: 768px) {
-  .main-content {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .status-card,
-  .features-card,
-  .actions-card {
-    width: 30%;
-  }
+    .hero-nav,
+    .back-to-top,
+    .scroll-progress {
+        display: none !important;
+    }
 }
